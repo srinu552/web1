@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        dialog{
+            width: 300px;
+            border: none;
+
+        }
+        input{
+            width: 100%;
+            margin-bottom: 10px;
+            margin-top: 4px;
+            padding: 8px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 4px;
+            border: none;
+            border: 1px solid #ccc;
+            
+        }
+        .btn-main{
+            border: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: green;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn-main:hover{
+            opacity: 0.7;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .close{
+            border: none;
+           font-size: 1.3rem;
+            background-color: transparent;
+            outline: none;
+            cursor: pointer;
+        }
+        .close:hover{
+            color: green;
+        }
+
+
+        dialog::backdrop{
+            background-color: rgba(0, 0, 0, 0.331);
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showLoginPopup()">Create account</button>
+
+    <dialog id="popup1">
+       <div class="header">
+        <h3>Create account</h3>
+        <button class="close" onclick="closeLoginPopup()"><i class="fa-solid fa-xmark"></i></button>
+       </div>
+        <hr>
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter your name">
+
+        <label for="email">Email addres</label>
+        <input type="email" placeholder="Enter your email">
+
+        <label for="password">Create password</label>
+        <input type="password" placeholder="Password">
+
+        <label for="C_password">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password">
+        <small>Do you have an already account? <a href="#">Sign in</a></small> <br> <br>
+        <button type="button" class="btn-main">Create account</button>
+    </dialog>
+
+
+    <script>
+        let popup1 = document.getElementById('popup1');
+       function showLoginPopup(){
+        popup1.showModal();
+       }
+       function closeLoginPopup(){
+        popup1.close();
+       }
+    </script>
+</body>
+</html>
